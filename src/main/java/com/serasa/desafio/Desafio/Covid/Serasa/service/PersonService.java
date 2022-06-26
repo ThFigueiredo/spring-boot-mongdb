@@ -9,7 +9,7 @@ public interface PersonService {
     Person createPerson(Person person);
     Person updatePerson(Person person);
     List<Person> getAllPersons();
-    Person getPersonById(Long personId);
-    void deletePersonById(Long personId);
+    Person getPersonById(String personId);
+    void deletePersonById(String personId);
 }
 

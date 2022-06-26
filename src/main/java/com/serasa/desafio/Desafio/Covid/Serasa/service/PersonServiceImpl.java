@@ -49,7 +49,7 @@ public class PersonServiceImpl implements PersonService {
 
 
     @Override
-    public Person getPersonById(Long personId) {
+    public Person getPersonById(String personId) {
         Optional<Person> personDb = this.personRepository.findById(personId);
 
         if(personDb.isPresent()) {
@@ -60,7 +60,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public void deletePersonById(Long personId) {
+    public void deletePersonById(String personId) {
         Optional<Person> personDb = this.personRepository.findById(personId);
 
         if(personDb.isPresent()) {

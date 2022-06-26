@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import javax.persistence.*;
@@ -13,14 +14,15 @@ import javax.validation.constraints.Email;
 import java.util.UUID;
 
 @Data
-@Entity
+//@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "Person")
 public class Person {
 
-    @Id
-    private long id;
+    @MongoId(FieldType.OBJECT_ID)
+    private String id;
+
     private String name;
     @Email
     private String email;
