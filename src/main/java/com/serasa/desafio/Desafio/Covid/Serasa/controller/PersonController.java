@@ -5,6 +5,7 @@ import com.serasa.desafio.Desafio.Covid.Serasa.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ public class PersonController {
     private PersonService personService;
 
     @GetMapping("/persons")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<List<Person>> getAllPerson(){
         return ResponseEntity.ok().body(personService.getAllPersons());
     }

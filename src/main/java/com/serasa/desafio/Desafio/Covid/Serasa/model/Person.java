@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
-import javax.persistence.*;
+//import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.util.UUID;
 
